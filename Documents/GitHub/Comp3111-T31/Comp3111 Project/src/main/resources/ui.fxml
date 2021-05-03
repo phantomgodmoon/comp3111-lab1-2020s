@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ProgressIndicator?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox prefHeight="679.0" prefWidth="719.0" xmlns="http://javafx.com/javafx/15.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="comp3111.popnames.Controller">
+  <children>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="437.0" prefWidth="719.0">
+      <children>
+            <TabPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="350.0" prefWidth="719.0" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="tabTaskZero" text="Task Zero">
+                  <content>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="221.0" prefWidth="719.0">
+                           <children>
+                              <Label layoutX="98.0" layoutY="67.0" prefHeight="18.0" prefWidth="87.0" text="Name (female)" />
+                              <Label layoutX="98.0" layoutY="98.0" text="Year of Interest" />
+                              <TextField fx:id="textfieldNameF" layoutX="185.0" layoutY="64.0" prefHeight="26.0" prefWidth="150.0" promptText="e.g 1830 (18: yr 18-19; 30: Spring)" text="Desire" />
+                              <TextField fx:id="textfieldYear" layoutX="185.0" layoutY="95.0" text="2019" />
+                              <Button fx:id="buttonRankM" layoutX="185.0" layoutY="134.0" mnemonicParsing="false" onAction="#doRankM" text="Rank (male)" />
+                              <Label layoutX="98.0" layoutY="35.0" text="Name (male)" />
+                              <TextField fx:id="textfieldNameM" layoutX="185.0" layoutY="32.0" prefHeight="26.0" prefWidth="149.0" text="David" />
+                              <Label layoutX="98.0" layoutY="138.0" text="REPORT" />
+                              <Button fx:id="buttonRankF" layoutX="271.0" layoutY="134.0" mnemonicParsing="false" onAction="#doRankF" text="Rank (female)" />
+                              <Button fx:id="buttonTopM" layoutX="370.0" layoutY="134.0" mnemonicParsing="false" onAction="#doTopM" text="Top 5 (male)" />
+                              <Button fx:id="buttonTopF" layoutX="462.0" layoutY="134.0" mnemonicParsing="false" onAction="#doTopF" text="Top 5 (female)" />
+                              <Button fx:id="buttonSummary" layoutX="566.0" layoutY="134.0" mnemonicParsing="false" onAction="#doSummary" text="Summary" />
+                              <Label layoutX="342.0" layoutY="98.0" text="Range: 1880 - 2019" />
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tabReport1" text="Reporting 1">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="384.0" prefWidth="719.0">
+                           <children>
+                              <Label layoutX="79.0" layoutY="44.0" />
+                              <TextArea layoutX="96.0" layoutY="24.0" prefHeight="99.0" prefWidth="398.0" text="Task #1: Most Popular Names (data reporting)&#10;&#10;Generate a report in response to the queries on the most popular names in a given year.&#10;" wrapText="true" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                <Tab fx:id="tabReport2" text="Reporting 2">
+                  <content>
+                        <AnchorPane>
+                           <children>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="450.0" prefWidth="722.0">
+                                 <children>
+                                    <TextArea layoutX="109.0" layoutY="33.0" prefHeight="102.0" prefWidth="383.0" text="Task #2: K-th Popular Names (data reporting)&#10;&#10;Generate a report in response to the queries on the K-th popular names over a given period.&#10;" wrapText="true" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="tabReport3" text="Reporting 3">
+                    <content>
+                        <AnchorPane prefHeight="254.0" prefWidth="719.0">
+                           <children>
+                            <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="525.0" prefWidth="719.0" styleClass="anchor" stylesheets="@Task3Task6.css">
+                                 <children>
+                                    <Label layoutX="360.0" layoutY="47.0" text="Range: 1880 - 2019" />
+                                    <Label layoutX="360.0" layoutY="79.0" text="Range: 1880 - 2019" />
+                                    <Label layoutX="104.0" layoutY="214.0" styleClass="label-bright" text="REPORT" />
+                                    <Label layoutX="55.0" layoutY="150.0" prefHeight="21.0" prefWidth="137.0" styleClass="label-bright" text="Gender of Interest" />
+                                    <Button fx:id="buttonSummaryTask3" layoutX="179.0" layoutY="208.0" mnemonicParsing="false" onAction="#doGenerateTask3" stylesheets="@DarkTheme.css" text="Report" />
+                                    <TextField fx:id="textfieldGenderOfInterest" layoutX="197.0" layoutY="146.0" prefHeight="25.0" prefWidth="28.0" stylesheets="@DarkTheme.css" text="F" />
+                                    <Button fx:id="buttonBarChartTask3" layoutX="408.0" layoutY="208.0" mnemonicParsing="false" onAction="#doBarChartTask3" stylesheets="@DarkTheme.css" text="Bar Chart" visible="false" />
+                                    <Button fx:id="buttonLineChartTask3" layoutX="534.0" layoutY="208.0" mnemonicParsing="false" onAction="#doLineChartTask3" stylesheets="@DarkTheme.css" text="Line Chart" visible="false" />
+                                    <Button fx:id="buttonTableViewTask3" layoutX="278.0" layoutY="208.0" mnemonicParsing="false" onAction="#doTableViewTask3" stylesheets="@DarkTheme.css" text="Table View" visible="false" />
+                                    <ImageView fx:id="imageviewMillions" fitHeight="104.0" fitWidth="226.0" layoutX="493.0" layoutY="5.0" visible="false">
+                                       <image>
+                                          <Image url="@Image/TyJS-fyitapv8944213.gif" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="imageviewClick" fitHeight="81.0" fitWidth="95.0" layoutX="591.0" layoutY="202.0" visible="false">
+                                       <image>
+                                          <Image url="@Image/giphy.gif" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="imageviewChart" fitHeight="106.0" fitWidth="141.0" layoutX="571.0" layoutY="4.0">
+                                       <image>
+                                          <Image url="@Image/dac71367c46f3f6cb5fb3cefbe305917.gif" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="imageviewWarning" fitHeight="51.0" fitWidth="57.0" layoutX="28.0" layoutY="14.0" visible="false">
+                                       <image>
+                                          <Image url="@Image/832px-Warning.svg.png" />
+                                       </image>
+                                    </ImageView>
+                                    <ImageView fx:id="imageviewAnime" fitHeight="71.0" fitWidth="107.0" layoutY="247.0" visible="false">
+                                       <image>
+                                          <Image url="@Image/23-239616_anime-girl-confused-png-transparent-png.png" />
+                                       </image>
+                                    </ImageView>
+                                    <Label layoutX="96.0" layoutY="47.0" styleClass="label-bright" stylesheets="@Task3Task6.css" text="Starting Year" />
+                                    <Label layoutX="98.0" layoutY="80.0" prefHeight="18.0" prefWidth="87.0" styleClass="label-bright" stylesheets="@Task3Task6.css" text="Ending Year" />
+                                    <Label layoutX="68.0" layoutY="114.0" prefHeight="21.0" prefWidth="125.0" styleClass="label-bright" stylesheets="@Task3Task6.css" text="Name of Interest" />
+                                    <Button fx:id="buttonResetTask3" layoutX="179.0" layoutY="246.0" mnemonicParsing="false" onAction="#resetTask3" stylesheets="@DarkTheme.css" text="Try another input" visible="false" />
+                                 </children>
+                              </AnchorPane>
+                              <TextField fx:id="textfieldEndingYear" layoutX="195.0" layoutY="74.0" prefHeight="26.0" prefWidth="150.0" promptText="e.g 2000" styleClass="text" stylesheets="@DarkTheme.css" text="2010" />
+                              <TextField fx:id="textfieldNameOfInterest" layoutX="195.0" layoutY="105.0" styleClass="text" stylesheets="@DarkTheme.css" text="Mary" />
+                              <TextField fx:id="textfieldStartingYear" layoutX="195.0" layoutY="42.0" prefHeight="26.0" prefWidth="149.0" promptText="e.g 1900" styleClass="text" stylesheets="@DarkTheme.css" text="1900" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabApp1" text="Application1">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="412.0" prefWidth="719.0">
+                           <children>
+                              <TextArea layoutX="40.0" layoutY="26.0" prefHeight="106.0" prefWidth="538.0" text="Task #4: Recommendation on Names for Newborn Babies (application)&#10;&#10;Develop and implement an online service using empirical data to help make informed decisions on naming their newborn babies.&#10;" wrapText="true" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabApp2" text="Application 2">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                           <children>
+                              <TextArea layoutX="40.0" layoutY="27.0" prefHeight="115.0" prefWidth="509.0" text="Task #5: Prediction on Names for Compatible Pairs (application)&#10;&#10;Develop and implement an online service using empirical data to help make informed decisions on predicting names for compatible pairs&#10;" wrapText="true" />
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="tabApp3" text="Application 3">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="431.0" prefWidth="719.0" styleClass="anchor">
+                           <children>
+                              <Button fx:id="buttonViewResultTask6" layoutX="387.0" layoutY="273.0" mnemonicParsing="false" onAction="#doTask6_2" text="View the results" visible="false" />
+                              <Button fx:id="buttonTask6" layoutX="386.0" layoutY="273.0" mnemonicParsing="false" onAction="#doTask6" text="Predict the Compatibility" />
+                              <Label fx:id="labelNameTask6" layoutX="30.0" layoutY="17.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Your Name" />
+                              <TextField fx:id="textfieldNameTask6" layoutX="140.0" layoutY="6.0" prefHeight="43.0" prefWidth="87.0" stylesheets="@DarkTheme.css" text="Marco" />
+                              <Label fx:id="labelGenderTask6" layoutX="41.0" layoutY="61.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Your Gender" />
+                              <Label fx:id="labelYOBTask6" layoutX="42.0" layoutY="102.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Your YOB" />
+                              <TextField fx:id="textfieldYOBTask6" layoutX="155.0" layoutY="80.0" prefHeight="43.0" prefWidth="59.0" stylesheets="@DarkTheme.css" text="2001" />
+                              <Label fx:id="labelTargetNameTask6" layoutX="25.0" layoutY="133.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Target's Name" />
+                              <TextField fx:id="textfieldTargetNameTask6" layoutX="146.0" layoutY="122.0" prefHeight="43.0" prefWidth="77.0" stylesheets="@DarkTheme.css" text="Cherry" />
+                              <Label fx:id="labelTargetGenderTask6" layoutX="14.0" layoutY="171.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Target's Gender" />
+                              <Label fx:id="labelPreferenceTask6" layoutX="16.0" layoutY="252.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Your Preference" />
+                              <Label fx:id="labelAlgorithmTask6" layoutX="21.0" layoutY="281.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Algorithm" />
+                              <RadioButton fx:id="radioButtonAlgorithm1Task6" layoutX="131.0" layoutY="281.0" mnemonicParsing="false" onAction="#radioButtonAlgorithm1Task6" selected="true" styleClass="label-bright" stylesheets="@DarkTheme.css" text="T6X1" />
+                              <RadioButton fx:id="radioButtonAlgorithm2Task6" layoutX="204.0" layoutY="281.0" mnemonicParsing="false" onAction="#radioButtonAlgorithm2Task6" styleClass="label-bright" stylesheets="@DarkTheme.css" text="T6X2" />
+                              <RadioButton fx:id="radioButtonPreferenceYoungerTask6" layoutX="138.0" layoutY="252.0" mnemonicParsing="false" onAction="#radioButtonPreferenceYoungerTask6" selected="true" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Younger" />
+                              <RadioButton fx:id="radioButtonPreferenceOlderTask6" layoutX="221.0" layoutY="252.0" mnemonicParsing="false" onAction="#radioButtonPreferenceOlderTask6" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Older" />
+                              <RadioButton fx:id="radioButtonTargetGenderMTask6" layoutX="136.0" layoutY="171.0" mnemonicParsing="false" onAction="#radioButtonTargetGenderMTask6" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Male" />
+                              <RadioButton fx:id="radioButtonTargetGenderFTask6" layoutX="221.0" layoutY="171.0" mnemonicParsing="false" onAction="#radioButtonTargetGenderFTask6" selected="true" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Female" />
+                              <RadioButton fx:id="radioButtonGenderMTask6" layoutX="147.0" layoutY="61.0" mnemonicParsing="false" onAction="#radioButtonGenderMTask6" selected="true" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Male" />
+                              <RadioButton fx:id="radioButtonGenderFTask6" layoutX="220.0" layoutY="61.0" mnemonicParsing="false" onAction="#radioButtonGenderFTask6" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Female" />
+                              <ImageView fitHeight="53.0" fitWidth="57.0" layoutX="648.0" layoutY="10.0">
+                                 <image>
+                                    <Image url="@Image/220-2203226_volume-sound-audio-on-audio-icon-white-png.png" />
+                                 </image>
+                              </ImageView>
+                              <RadioButton fx:id="radioButtonAlgorithm3Task6" layoutX="272.0" layoutY="281.0" mnemonicParsing="false" onAction="#radioButtonAlgorithm3Task6" styleClass="label-bright" stylesheets="@DarkTheme.css" text="T6X3" />
+                              <Label fx:id="labelTargetYOBTask6" layoutX="16.0" layoutY="221.0" styleClass="label-bright" stylesheets="@DarkTheme.css" text="Target's  YOB" />
+                              <TextField fx:id="textfieldTargetYOBTask6" layoutX="148.0" layoutY="199.0" prefHeight="43.0" prefWidth="75.0" stylesheets="@DarkTheme.css" text="2001" />
+                              <ProgressIndicator fx:id="progressTask6" layoutX="632.0" layoutY="254.0" prefHeight="66.0" prefWidth="65.0" progress="0.21" styleClass="label-bright" stylesheets="@DarkTheme.css" />
+                              <Slider fx:id="HobbyGamingTask6" layoutX="420.0" layoutY="46.0" visible="false" />
+                              <Slider fx:id="HobbyNetflixTask6" layoutX="420.0" layoutY="14.0" visible="false" />
+                              <Label fx:id="HobbytextTask6" layoutX="251.0" layoutY="10.0" prefHeight="21.0" prefWidth="101.0" styleClass="label-bright" text="Your Interest" visible="false" />
+                              <Label fx:id="labelNetflixTask6" layoutX="360.0" layoutY="10.0" styleClass="label-bright" text="Netflix" visible="false" />
+                              <Label fx:id="labelGamingTask6" layoutX="360.0" layoutY="42.0" styleClass="label-bright" text="Gaming" visible="false" />
+                              <Label fx:id="labelReadingTask6" layoutX="360.0" layoutY="78.0" styleClass="label-bright" text="Reading" visible="false" />
+                              <Label fx:id="labelSportTask6" layoutX="368.0" layoutY="111.0" styleClass="label-bright" text="Sport" visible="false" />
+                              <Slider fx:id="HobbyReadingTask6" layoutX="420.0" layoutY="82.0" visible="false" />
+                              <Slider fx:id="HobbySportTask6" layoutX="420.0" layoutY="116.0" visible="false" />
+                              <Label fx:id="labelPersonalityTask6" layoutX="272.0" layoutY="201.0" styleClass="label-bright" text="Your target is:" visible="false" />
+                              <RadioButton fx:id="radioButtonEruditeTask6" layoutX="383.0" layoutY="203.0" mnemonicParsing="false" styleClass="label-bright" text="Erudite" visible="false" />
+                              <RadioButton fx:id="radioButtonSportyTask6" layoutX="462.0" layoutY="203.0" mnemonicParsing="false" styleClass="label-bright" text="Sporty" visible="false" />
+                              <RadioButton fx:id="radioButtonHipsterTask6" layoutX="544.0" layoutY="203.0" mnemonicParsing="false" styleClass="label-bright" text="Hipster" visible="false" />
+                              <RadioButton fx:id="radioButtonSociableTask6" layoutX="622.0" layoutY="201.0" mnemonicParsing="false" styleClass="label-bright" text="Sociable" visible="false" />
+                              <Button fx:id="resetButtonTask6" layoutX="387.0" layoutY="275.0" mnemonicParsing="false" onAction="#resetTask6" text="Try Another Input" visible="false" />
+                           </children>
+                           <stylesheets>
+                              <URL value="@DarkTheme.css" />
+                              <URL value="@Task3Task6.css" />
+                           </stylesheets></AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+      </children>
+    </AnchorPane>
+      <Label text="Console" />
+      <ScrollPane prefHeight="482.0" prefWidth="719.0">
+         <content>
+            <TextArea fx:id="textAreaConsole" disable="true" editable="false" prefHeight="300.0" prefWidth="718.0" />
+         </content>
+      </ScrollPane>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+  </children>
+</VBox>
